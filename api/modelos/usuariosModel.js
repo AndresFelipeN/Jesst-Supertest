@@ -7,6 +7,7 @@ var Schema = mongoose.Schema
 //definicion del objeto schema
 var usuariosSchema = new Schema({
     nombre:String,
+    apellidos:String,
     email:String,
     password:String,
     edad:Number,
@@ -30,6 +31,7 @@ usuariosModel.guardar = function(post, callback){
     //estamos tomando los datos del frond end y los organizamos en la coleccion
      const instancia = new Mymodel
      instancia.nombre = post.nombre
+     instancia.apellidos = post.apellidos
      instancia.email = post.email
      instancia.password = post.password
      instancia.edad = post.edad
@@ -58,6 +60,7 @@ usuariosModel.actualizar = function (post, callback){
     Mymodel.findByIdAndUpdate(post._id, // Mymodel.findOneAndUpdate({_id:post._id} es una opcion
         {
             nombre:post.nombre,
+            apellidos:post.apellidos,
             rol:post.rol,
             estado:post.estado
         
@@ -100,6 +103,19 @@ usuariosModel.listar = function(post, callback){
     })
  
      //return callback({state:true, datos:bdusuarios}) -> estamos trayendo los datos almacenados en el array
+}
+
+usuariosModel.listarId = function(post, callback){
+   
+    Mymodel.find({_id:post._id}, {password:0}).then ((respuesta) => {
+ 
+     return callback({state:true, datos:respuesta})
+    })
+    .catch ((error) => {
+     return callback ({state:false, datos:[], error:error, mensaje:"se presento un error"})
+    })
+ 
+    
 }
 
 usuariosModel.login = function (post, callback){
@@ -145,10 +161,5 @@ usuariosModel.existeemail = function (post, callback){
     // }
 
 }
-
-
-
-
-
 
 module.exports.usuariosModel = usuariosModel
