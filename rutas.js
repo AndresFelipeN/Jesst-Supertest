@@ -24,6 +24,11 @@ app.post('/usuarios/listar', function(request,response){
     //acontinucacion vamos a usar la funcion
     usuariosController.listar(request, response)
 })
+
+app.post('/usuarios/listarId', function(request,response){
+    //acontinucacion vamos a usar la funcion
+    usuariosController.listarId(request, response)
+})
                          
 app.post('/usuarios/login', function(request,response){
     //acontinucacion vamos a usar la funcion
