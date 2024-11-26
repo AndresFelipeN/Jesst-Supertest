@@ -150,6 +150,7 @@ usuariosModel.existeemail = function (post, callback){
             return callback({existe:'si'})
         }
     })
+
     //hacer busqueda en elementos
     //var posicion =bdusuarios.findIndex((item) => item.email == post.email)
     //Igual o mayor a cero significa que si existe
@@ -162,4 +163,7 @@ usuariosModel.existeemail = function (post, callback){
 
 }
 
-module.exports.usuariosModel = usuariosModel
+module.exports = {
+    usuariosModel:usuariosModel,
+    Mymodel:Mymodel
+}

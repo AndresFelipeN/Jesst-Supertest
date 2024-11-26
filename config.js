@@ -1,9 +1,18 @@
 var config = {
     email:{},
-    sesiones:{}
+    sesiones:{},
+    modo:'produccion' //produccion, test
 }
 
 //Data base name
+if(config.modo === 'produccion'){
+ config.bd = "jest&supertest"
+}
+else{
+    config.bd = "test"
+} 
+
+config.bd = "test"
 config.bd = "jest&supertest"
 
 //session, secret and expiration
@@ -15,7 +24,8 @@ config.palabraclave = "sayud2fqwyt3dfyqwfdyf3dtb5ywdf{ytqwfqwytl4fdywqtdyqwdyt4w
 
 //aca estamos añadiendo el front end a la lista de cors para acceder al back end
 config.origins = [
-    "http://localhost:4200"
+    "http://localhost:4200",
+    "http://localhost:9876"
 ]
 
 module.exports.config = config

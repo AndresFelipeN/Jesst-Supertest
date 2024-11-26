@@ -1,0 +1,29 @@
+{
+  "name": "jest_supertest",
+  "version": "1.0.0",
+  "description": "Test unitarios en Nodejs usando Jest y Supertest",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "Test",
+    "unitarios"
+  ],
+  "author": "Andres Felipe N",
+  "license": "ISC",
+  "dependencies": {
+    "-": "^0.0.1",
+    "body-parser": "1.20.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "4.21.1",
+    "express-session": "^1.18.1",
+    "jest": "^29.7.0",
+    "mongoose": "8.8.1",
+    "nodemon": "^3.1.7",
+    "sha256": "^0.2.0",
+    "supertest": "^7.0.0",
+    "test": "^3.3.0"
+  }
+}
